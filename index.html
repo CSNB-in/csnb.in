@@ -837,7 +837,57 @@
     box-shadow: 0 0 40px var(--purple-glow);
   }
 
-  .contact-info {
+  /* Contact cards */
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    border: 1px solid #111;
+    text-decoration: none;
+    color: #fff;
+    transition: border-color 0.3s, background 0.3s;
+    margin-bottom: 2px;
+  }
+  .contact-card:hover {
+    border-color: rgba(148,0,255,0.4);
+    background: rgba(148,0,255,0.05);
+  }
+  .contact-card-icon {
+    font-size: 22px;
+    width: 48px; height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #1a1a1a;
+    flex-shrink: 0;
+    transition: border-color 0.3s;
+  }
+  .contact-card:hover .contact-card-icon { border-color: rgba(148,0,255,0.3); }
+  .contact-card-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #444;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .contact-card-value {
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+  }
+  .contact-card-arrow {
+    margin-left: auto;
+    font-size: 18px;
+    color: var(--purple);
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .contact-card:hover .contact-card-arrow { opacity: 1; transform: translateX(0); }
+
+
     padding-top: 20px;
   }
 
@@ -1391,23 +1441,30 @@
   </div>
 
   <div class="contact-form reveal reveal-delay-2">
-    <div class="form-field">
-      <label class="form-label">Name</label>
-      <input type="text" class="form-input" placeholder="Your name">
-    </div>
-    <div class="form-field">
-      <label class="form-label">Email</label>
-      <input type="email" class="form-input" placeholder="your@email.com">
-    </div>
-    <div class="form-field">
-      <label class="form-label">Subject</label>
-      <input type="text" class="form-input" placeholder="Collab / Press / Business">
-    </div>
-    <div class="form-field">
-      <label class="form-label">Message</label>
-      <textarea class="form-textarea" placeholder="Tell us about your idea..."></textarea>
-    </div>
-    <button class="form-submit" onclick="handleContact(this)">Send Message →</button>
+    <a href="mailto:csnbmlr@gmail.com" class="contact-card">
+      <div class="contact-card-icon">✉</div>
+      <div>
+        <div class="contact-card-label">Email Us</div>
+        <div class="contact-card-value">csnbmlr@gmail.com</div>
+      </div>
+      <div class="contact-card-arrow">↗</div>
+    </a>
+    <a href="https://wa.me/918867326663" target="_blank" class="contact-card">
+      <div class="contact-card-icon">💬</div>
+      <div>
+        <div class="contact-card-label">WhatsApp</div>
+        <div class="contact-card-value">+91 88673 26663</div>
+      </div>
+      <div class="contact-card-arrow">↗</div>
+    </a>
+    <a href="https://instagram.com/csnb.in" target="_blank" class="contact-card">
+      <div class="contact-card-icon">◈</div>
+      <div>
+        <div class="contact-card-label">Instagram</div>
+        <div class="contact-card-value">@csnb.in</div>
+      </div>
+      <div class="contact-card-arrow">↗</div>
+    </a>
   </div>
 </section>
 
